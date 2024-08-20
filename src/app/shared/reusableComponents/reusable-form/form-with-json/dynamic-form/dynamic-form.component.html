@@ -1,0 +1,79 @@
+<app-header></app-header>
+
+<div class="container mt-4">
+    <div class="header color">
+        <h1>Registration Form</h1>
+    </div>
+
+    <section>
+        <div class="col-md-12 mb-4">{{registerForm.value | json}}</div>
+
+        <form id="form" [formGroup]="registerForm" (ngSubmit)="submit()">
+            <div class="row g-3">
+                <div class="col-md-6" *ngFor="let control of dynamicFormArray">
+                    <div [ngSwitch]="control.Type" class="mb-3">
+                        <ng-container *ngSwitchCase="'input'">
+                            <label>{{control.Label}}</label>
+                            <input type="text" [formControlName]="control.ID" class="form-control">
+                            <div *ngIf="registerForm.get(control.ID)?.dirty || registerForm.get(control.ID)?.touched">
+                                <small *ngIf="!registerForm.get(control.ID)?.valid">{{control.Label}} is
+                                    required</small>
+                            </div>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'tel'">
+                            <label>{{control.Label}}</label>
+                            <input type="tel" [formControlName]="control.ID" class="form-control">
+                            <div *ngIf="registerForm.get(control.ID)?.dirty || registerForm.get(control.ID)?.touched">
+                                <small *ngIf="!registerForm.get(control.ID)?.valid">{{control.Label}} is
+                                    required</small>
+                            </div>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'email'">
+                            <label>{{control.Label}}</label>
+                            <input type="email" [formControlName]="control.ID" class="form-control">
+                            <div *ngIf="registerForm.get(control.ID)?.dirty || registerForm.get(control.ID)?.touched">
+                                <small *ngIf="!registerForm.get(control.ID)?.valid">{{control.Label}} is
+                                    required</small>
+                            </div>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'date'">
+                            <label>{{control.Label}}</label>
+                            <input type="date" [formControlName]="control.ID" class="form-control">
+                            <div *ngIf="registerForm.get(control.ID)?.dirty || registerForm.get(control.ID)?.touched">
+                                <small *ngIf="!registerForm.get(control.ID)?.valid">{{control.Label}} is
+                                    required</small>
+                            </div>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'radio'">
+                            <label>{{control.Label}}</label>
+                            <div class="form-check" *ngFor="let val of control.Value.split(',')">
+                                <input type="radio" [formControlName]="control.ID" name="{{control.ID}}" value="{{val}}"
+                                    class="form-check-input">
+                                <label class="form-check-label">{{val}}</label>
+                            </div>
+                            <div *ngIf="registerForm.get(control.ID)?.dirty || registerForm.get(control.ID)?.touched">
+                                <small *ngIf="!registerForm.get(control.ID)?.valid">{{control.Label}} is
+                                    required</small>
+                            </div>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'select'">
+                            <label>{{control.Label}}</label>
+                            <select [formControlName]="control.ID" class="form-select">
+                                <option value="-1">Select</option>
+                                <option *ngFor="let val of control.Value.split(',')" value="{{val}}">{{val}}</option>
+                            </select>
+                            <div *ngIf="registerForm.get(control.ID)?.dirty || registerForm.get(control.ID)?.touched">
+                                <small *ngIf="!registerForm.get(control.ID)?.valid">{{control.Label}} is
+                                    required</small>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-3">
+                <button type="submit" class="btn btn-primary">Sign in</button>
+            </div>
+        </form>
+    </section>
+</div>

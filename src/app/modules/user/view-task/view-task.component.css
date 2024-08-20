@@ -1,0 +1,72 @@
+.display-area {
+    position: relative;
+    width: 100%;
+    padding: 0 15px;
+  }
+  
+  .blockquote-custom {
+    position: relative;
+    font-size: 1.1rem;
+    background-color: #f8f9fa;
+    border-left: 3px solid #007bff;
+  }
+  
+  .blockquote-custom-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -25px;
+    left: 15px;
+  }
+  
+  .blockquote-custom-icon i {
+    font-size: 1.5rem;
+  }
+  
+  body {
+    background: #eff0eb;
+    background-image: url('https://i.postimg.cc/MTbfnkj6/bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  @media (max-width: 768px) {
+    .blockquote-custom {
+      font-size: 1rem;
+      padding: 15px;
+    }
+  
+    .blockquote-custom-icon {
+      width: 40px;
+      height: 40px;
+      top: -20px;
+      left: 15px;
+    }
+  
+    .blockquote-custom-icon i {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .blockquote-custom {
+      font-size: 0.9rem;
+      padding: 10px;
+    }
+  
+    .blockquote-custom-icon {
+      width: 30px;
+      height: 30px;
+      top: -15px;
+      left: 15px;
+    }
+  
+    .blockquote-custom-icon i {
+      font-size: 1rem;
+    }
+  }
+  

@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-9">
+
+    </div>
+ <div class="col-3 text-end mb-4">
+     <input type="text" [(ngModel)]="searchBox" (ngModelChange)="onSearchChange($event)" class="form-control" placeholder="Serach">
+ </div>
+</div>
+
+<table class="table table-hover table-bordered">
+    <thead>
+      <tr>
+        <th>Sr No.</th>
+        <th *ngFor="let column of columnArray">{{column.header}}</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <!-- <tr *ngFor="let user of tableData; let i = index">  used filterData for searching purpose, while trying to search anything it'll filter from orginal array -->
+      <tr *ngFor="let user of filterData; let i = index">        
+        <td>{{i + 1}}</td>
+        <td *ngFor="let column of columnArray">
+            <div *ngIf="column.header == 'Action' && showActionButton">
+                <button class="btn btn-sm- btn-success" (click)="editRecord(user)">Edit</button>
+                <button class="btn btn-sm btn-danger" (click)="deleteRecord(user)">Delete</button>
+            </div>
+            <div *ngIf="column !== 'Action'">
+                <span *ngIf="column.dataType == 'string'">{{user[column.fieldName] | titlecase | notAvialable}}</span>  <!-- adding notAvialable pipe in madhe cell bcz if data is not avialable it'll show 'not avialable'-->
+                <span *ngIf="column.dataType == 'number'">{{user[column.fieldName] | notAvialable }}</span>
+                <span *ngIf="column.dataType == 'date'">{{user[column.fieldName] | date:'dd-MMM-yyyy' | notAvialable}}</span>
+                
+            </div>
+         
+        </td>
+      </tr>
+    
+    </tbody>
+  </table>

@@ -1,0 +1,82 @@
+<!-- Responsive navbar-->
+<app-header></app-header>
+<!-- Header-->
+
+
+<div class="container mt-5">
+    <div>
+        <h1 class="text-center">Stepper Form</h1>
+        <p>Here’s a step-by-step guide to creating a basic stepper form with personal details, education details, and work experiences.</p>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="stepper">
+          <ul class="nav nav-pills mb-3">
+            <li class="nav-item">
+              <a class="nav-link" [class.active]="currentStep === 0" (click)="goToStep(0)">Step 1: Personal Details</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [class.active]="currentStep === 1" (click)="goToStep(1)">Step 2: Education Details</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [class.active]="currentStep === 2" (click)="goToStep(2)">Step 3: Work Experiences</a>
+            </li>
+          </ul>
+          <div class="form-container">
+            <form [formGroup]="personalDetailsForm" *ngIf="currentStep === 0">
+              <h3>Personal Details</h3>
+              <div class="mb-3">
+                <label for="firstName" class="form-label">First Name:</label>
+                <input type="text" id="firstName" class="form-control" formControlName="firstName">
+              </div>
+              <div class="mb-3">
+                <label for="lastName" class="form-label">Last Name:</label>
+                <input type="text" id="lastName" class="form-control" formControlName="lastName">
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" id="email" class="form-control" formControlName="email">
+              </div>
+              <button type="button" class="btn btn-primary" (click)="nextStep()">Next</button>
+            </form>
+
+            <form [formGroup]="educationDetailsForm" *ngIf="currentStep === 1">
+              <h3>Education Details</h3>
+              <div class="mb-3">
+                <label for="degree" class="form-label">Degree:</label>
+                <input type="text" id="degree" class="form-control" formControlName="degree">
+              </div>
+              <div class="mb-3">
+                <label for="university" class="form-label">University:</label>
+                <input type="text" id="university" class="form-control" formControlName="university">
+              </div>
+              <div class="mb-3">
+                <label for="yearOfPassing" class="form-label">Year of Passing:</label>
+                <input type="number" id="yearOfPassing" class="form-control" formControlName="yearOfPassing">
+              </div>
+              <button type="button" class="btn btn-secondary" (click)="previousStep()">Back</button>
+              <button type="button" class="btn btn-primary mx-4" (click)="nextStep()">Next</button>
+            </form>
+
+            <form [formGroup]="workExperienceForm" *ngIf="currentStep === 2">
+              <h3>Work Experience</h3>
+              <div class="mb-3">
+                <label for="companyName" class="form-label">Company Name:</label>
+                <input type="text" id="companyName" class="form-control" formControlName="companyName">
+              </div>
+              <div class="mb-3">
+                <label for="position" class="form-label">Position:</label>
+                <input type="text" id="position" class="form-control" formControlName="position">
+              </div>
+              <div class="mb-3">
+                <label for="yearsOfExperience" class="form-label">Years of Experience:</label>
+                <input type="number" id="yearsOfExperience" class="form-control" formControlName="yearsOfExperience">
+              </div>
+              <button type="button" class="btn btn-secondary" (click)="previousStep()">Back</button>
+              <button type="button" class="btn btn-success  mx-4" (click)="submit()">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

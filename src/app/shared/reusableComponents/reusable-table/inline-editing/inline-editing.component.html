@@ -1,0 +1,109 @@
+<!-- Responsive navbar-->
+<app-header></app-header>
+<!-- Header-->
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="mt-2 mb-2 p-4 bg-primary text-white rounded text-center">
+                <h1>Inline Editing With validation</h1>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <!-- adding new row in the table -->
+        <div class="col-6 text-start mb-2">
+            <button class="btn btn-sm btn-primary" (click)="onAdd()">Add New</button>
+        </div>
+        <div class="col-2 text-end mb-2">
+            <input type="text" [(ngModel)]="searchText" placeholder="Search" (ngModelChange)="filter($event)"
+                class="form-control">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center">
+            <table class="table table-bordered table-responsive">
+                <thead>
+                    <tr class="bg-success text-white">
+                        <th>Sr</th>
+                        <th (click)="onNameSort()">Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>City</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- <tr *ngFor="let user of userArray; let i = index">  used filteredUsers for searching purpose, while trying to search anything it'll filter from orginal array -->
+                    <tr *ngFor="let user of filteredUsers; let i=index">
+                        <td>{{i+1}}</td>
+                        <td>
+                            <div *ngIf="user.isEdit">
+                                <input type="text" [(ngModel)]="user.name">
+                                <div class="text-danger" *ngIf="validateField(user.name)">
+                                    This is Required
+                                </div>
+                            </div>
+                            <div *ngIf="!user.isEdit">
+                                {{user.name}}
+                            </div>
+                        </td>
+                        <td>
+                            <div *ngIf="user.isEdit">
+                                <input type="text" [(ngModel)]="user.email">
+                                <div class="text-danger" *ngIf="validateField(user.email)">
+                                    This is Required
+                                </div>
+                            </div>
+                            <div *ngIf="!user.isEdit">
+                                {{user.email}}
+                            </div>
+                        </td>
+                        <td>
+                            <div *ngIf="user.isEdit">
+                                <input type="text" [(ngModel)]="user.mobile">
+                                <div class="text-danger" *ngIf="validateMobile(user.mobile) !== ''">
+                                    <span> {{validateMobile(user.mobile)}}</span>
+                                </div>
+                            </div>
+                            <div *ngIf="!user.isEdit">
+                                {{user.mobile}}
+                            </div>
+                        </td>
+                        <td>
+                            <div *ngIf="user.isEdit">
+                                <input type="text" [(ngModel)]="user.city">
+                                <div class="text-danger" *ngIf="validateField(user.city)">
+                                    This is Required
+                                </div>
+                            </div>
+                            <div *ngIf="!user.isEdit">
+                                {{user.city}}
+                            </div>
+                        </td>
+                        <td class="text-center">
+                            <div *ngIf="!user.isEdit">
+                                <i class="fa fa-pencil-square-o px-1" aria-hidden="true" title="Edit"
+                                    (click)="editUser(user)"></i>
+                                <i class="fa fa-trash-o" aria-hidden="true" title="Delete"
+                                    (click)="deleteUser(user)"></i>
+                            </div>
+                            <div *ngIf="user.isEdit">
+
+                                <!-- <app-reusable-button [buttonText]="'Update'" [btnClass]="'btn-success btn-sm mx-1'" (buttonClick)="onUpdate(user)"></app-reusable-button>
+
+                                <app-reusable-button [buttonText]="'Cancel'" [btnClass]="'btn-success btn-sm'" (buttonClick)="onCancel(user)"></app-reusable-button> -->
+
+                                <button class="btn btn-success btn-sm mx-1"
+                                    [disabled]="validateForm(user)" (click)="onUpdate(user)">Update</button>
+                                <button class="btn btn-success btn-sm" (click)="onCancel(user)">Cancel</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

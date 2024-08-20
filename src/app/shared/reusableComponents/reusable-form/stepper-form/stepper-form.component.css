@@ -1,0 +1,18 @@
+.stepper {
+    margin-bottom: 20px;
+  }
+  
+  .nav-pills .nav-link {
+    cursor: pointer;
+  }
+  
+  .form-container {
+    border: 1px solid #dee2e6;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  button {
+    margin-top: 20px;
+  }
+  

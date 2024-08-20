@@ -1,0 +1,17 @@
+
+<!-- Responsive navbar-->
+<app-header></app-header>
+<!-- Header-->
+
+<div class="container mt-4">
+
+    <div>
+        <h2>Resuable Table</h2>
+    </div>
+
+    <div class="row">
+        <app-table-elements [showActionButton]="true" [tableData]="usersArray" [columnArray]="columnArray"
+        (onEdit)="editUser($event)" (onDelete)="deleteUser($event)">
+    </app-table-elements>
+    </div>
+</div>

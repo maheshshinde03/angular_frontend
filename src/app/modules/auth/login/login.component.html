@@ -1,0 +1,48 @@
+<!-- Responsive navbar-->
+<app-header></app-header>
+<!-- Header-->
+
+<!-- <div *ngIf="errorMessage">
+	<h3>{{errorMessage}}</h3>
+</div> -->
+
+<div class="login-page" *ngIf="!errorMessage">
+	<div class="form">
+	  <div class="login">
+		<div class="login-header">
+		  <h3>LOGIN</h3>
+		  <p>Please enter your credentials to login.</p>
+		</div>
+	  </div>
+
+
+	  <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+		<div>
+		  <!-- <label for="email">Email:</label> -->
+		  <input type="email" id="email" formControlName="email"  placeholder="email">
+		  <!-- <div *ngIf="loginForm.get('email').touched && loginForm.get('email').hasError('required')">
+			Email is required
+		  </div> -->
+		  <div *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)" class="text-danger">           
+				<span>Email is required </span>         
+        </div>
+		</div>
+	  
+		<div>
+		  <!-- <label for="password">Password:</label> -->
+		  <input type="password" id="password" formControlName="password"  placeholder="password">
+		  <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.hasError('required')"  class="text-danger">
+			<span>Password is required</span>
+		  </div>
+		</div>
+	  
+		<button type="submit" [disabled]="loginForm.invalid">Login</button>
+		<div>
+			<span>Don't have an account? </span><a href="/auth/sign-up">Register now!</a><br>
+			  <a routerLink="/auth/forgot-password">Forgot Password?</a>
+		</div>
+	  </form>
+
+	
+	</div>
+  </div>

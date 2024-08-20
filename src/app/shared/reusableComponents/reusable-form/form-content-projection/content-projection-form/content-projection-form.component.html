@@ -1,0 +1,111 @@
+<!-- Responsive navbar-->
+<app-header></app-header>
+<!-- Header-->
+
+<div class="container">
+    <section class="vh-100 gradient-custom">
+        <div class="container py-5 h-100">
+            <div class="row justify-content-center align-items-center h-100">
+                <div class="col-12 col-lg-9 col-xl-7">
+                    <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                        <div class="card-body p-4 p-md-5">
+                            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
+                            <form [formGroup]="userForm" (ngSubmit)="registerForm()">
+    
+    
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+    
+                                        <app-form-element-wrapper [label]="'Name'" [tooltip]="'Enter Full Name'"
+                                        [validation]="userForm.controls['fullname'].touched && userForm.controls['fullname'].errors ? userForm.controls['fullname'].errors : {}">
+                                        <input type="text" formControlName="fullname" 
+                                            class="form-control form-control-lg" minlength="5" required></app-form-element-wrapper>
+                                    </div>
+                                    <div class="col-md-6 mb-4 pb-2">
+    
+                                        <app-form-element-wrapper [label]="'Email'" [tooltip]="'Enter Email'"
+                                            [validation]="userForm.controls['email'].touched  && userForm.controls['email'].errors ? userForm.controls['email'].errors : {}">
+                                            <input type="text" formControlName="email" 
+                                                class="form-control form-control-lg" minlength="5" required>
+                                        </app-form-element-wrapper>
+    
+                                    </div>
+    
+                                </div>
+    
+                                 <div class="row">
+    
+                                    <div class="col-md-6 mb-4 pb-2">
+    
+                                        <app-form-element-wrapper [label]="'Phone No.'" [tooltip]="'Enter Phone Number'"
+                                            [validation]="userForm.controls['mobile'].touched && userForm.controls['mobile'].errors ? userForm.controls['mobile'].errors : {}">
+                                            <input type="tel" formControlName="mobile" 
+                                                class="form-control form-control-lg" minlength="5" required />
+                                        </app-form-element-wrapper>
+    
+                                    </div>
+    
+                                    <div class="col-md-6 mb-4 pb-2">
+    
+                                        <app-form-element-wrapper [label]="'City'" [tooltip]="'Enter City Name'"
+                                            [validation]="userForm.controls['city'].touched && userForm.controls['city'].errors ? userForm.controls['city'].errors : {}">
+                                            <input type="text" formControlName="city" 
+                                                class="form-control form-control-lg" required />
+                                        </app-form-element-wrapper>
+    
+                                    </div>
+    
+    
+                                </div>
+    
+                                <div class="row">
+                                    <div class="col-md-6 mb-4 pb-2">
+    
+                                        <app-form-element-wrapper [label]="'Password'" [tooltip]="'Enter Password'"
+                                            [validation]="userForm.controls['password'].touched && userForm.controls['password'].errors ? userForm.controls['password'].errors : {}">
+                                            <input type="password" formControlName="password"  class="form-control form-control-lg"
+                                                minlength="5" required />
+                                        </app-form-element-wrapper>
+    
+                                    </div>
+    
+                                    <div class="col-md-6 mb-4 pb-2">
+    
+                                        <app-form-element-wrapper [label]="'Confirm Password'"
+                                            [tooltip]="'Enter Confirm Password'"
+                                            [validation]="userForm.controls['confirmPassword'].touched && userForm.controls['confirmPassword'].errors ? userForm.controls['confirmPassword'].errors : {}">
+                                            <input type="password" formControlName="confirmPassword"  class="form-control form-control-lg"
+                                                minlength="5" required />
+                                        </app-form-element-wrapper>
+    
+                                    </div>
+    
+                                </div> 
+    
+                                <!-- <div class="row">
+                      <div class="col-12">
+      
+                        <select class="select form-control-lg">
+                          <option value="1" disabled>Choose option</option>
+                          <option value="2">Subject 1</option>
+                          <option value="3">Subject 2</option>
+                          <option value="4">Subject 3</option>
+                        </select>
+                        <label class="form-label select-label">Choose option</label>
+      
+                      </div>
+                    </div> -->
+    
+                                <div class="mt-4 pt-2">
+                                    <input data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg"
+                                        type="submit" value="Submit" [disabled]="userForm.invalid" />
+                                </div>
+    
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

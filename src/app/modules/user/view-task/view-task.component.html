@@ -1,0 +1,38 @@
+<div class="container">
+    <main>
+      <div class="display-area">
+        <section class="py-5">
+          <div class="container">
+            <!-- FOR DEMO PURPOSE -->
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <header class="text-center pb-5">
+                  <h1 class="h2">Bootstrap Custom Quote</h1>
+                  <p>Build a nicely styled quote in Bootstrap 4.<br>Bootstrap snippet by <a href="https://bootstrapious.com/snippets" class="font-italic text-info">Bootstrapious</a></p>
+                </header>
+              </div>
+            </div>
+            <!-- END -->
+  
+            <div class="row">
+              <div class="col-lg-8 mx-auto" *ngFor="let taskDetail of taskDetails">
+                <!-- CUSTOM BLOCKQUOTE -->
+                <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
+                  <div class="blockquote-custom-icon bg-info shadow-sm">
+                    <i class="fa fa-quote-left text-white"></i>
+                  </div>
+                  <div><b>Title -</b> {{taskDetail.title}}</div>
+                  <p class="mb-0 mt-4 pt-4 font-italic border-top"><b>Description -</b> {{taskDetail.description}}</p>
+                  <footer class="pt-4 mt-4 border-top">
+                    <button class="btn btn-primary" routerLink="/user/task-list">Go Back</button>
+                  </footer>
+                </blockquote>
+                <!-- END -->
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+  

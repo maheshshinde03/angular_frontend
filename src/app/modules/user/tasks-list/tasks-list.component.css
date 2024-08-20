@@ -1,0 +1,78 @@
+.table-title .add-new {
+  height: 30px;
+  font-weight: bold;
+  font-size: 12px;
+  text-shadow: none;
+  min-width: 100px;
+  border-radius: 50px;
+  line-height: 13px;
+  margin-right: 2px;
+  float: right;
+}
+
+.table-title .add-new i {
+  margin-right: 4px;
+}
+
+.table-responsive {
+  margin-top: 20px;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+table.table td a {
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 5px;
+  min-width: 24px;
+}
+
+table.table td a.add {
+  color: #27C46B;
+}
+
+table.table td a.edit {
+  color: #FFC107;
+}
+
+table.table td a.delete {
+  color: #E34724;
+}
+
+table.table td i {
+  font-size: 19px;
+}
+
+table.table td a.add i {
+  font-size: 24px;
+  margin-right: -1px;
+  position: relative;
+  top: 3px;
+}
+
+.pagination {
+  flex-wrap: wrap;
+}
+
+.page-item {
+  margin: 2px;
+}
+
+@media (max-width: 576px) {
+  .table-responsive {
+    overflow-x: auto;
+  }
+}
+
+.input-group.mb-3 {
+  flex-wrap: nowrap;
+}
+
+@media (max-width: 576px) {
+  .input-group.mb-3 {
+    flex-wrap: wrap;
+  }
+}

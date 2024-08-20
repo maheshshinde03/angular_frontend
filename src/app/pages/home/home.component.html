@@ -1,0 +1,118 @@
+<!-- Responsive navbar-->
+   <app-header></app-header>
+<!-- Header-->
+<header class="py-5">
+    <div class="container px-lg-5">
+        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+            <div class="m-4 m-lg-5">
+                <h1 class="display-5 fw-bold">A warm welcome!</h1>
+                <p class="fs-4">Bootstrap utility classes are used to create this jumbotron since the old component has
+                    been removed from the framework. Why create custom CSS when you can use utilities?</p>
+                <a class="btn btn-primary btn-lg" href="#">Call to action</a>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Page Content-->
+<section class="pt-4">
+    <div class="container px-lg-5">
+        <!-- Page Features-->
+        <div class="row gx-lg-5">
+            <div class="col-lg-6 col-xxl-4 mb-5">
+                <div class="card bg-light border-0 h-100">
+                    <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i
+                                class="bi bi-bootstrap"></i></div>
+                        <h2 class="fs-4 fw-bold">Reusable Table Component</h2>
+                        <div class="list-group">
+                            <a class="list-group-item list-group-item-action" routerLink="/users-list">Reusable
+                                Table -1</a>
+                            <a class="list-group-item list-group-item-action" routerLink="/inline-editing">Inline
+                                Editing With validation</a>
+                            <a class="list-group-item list-group-item-action" routerLink="/table-inline-reactive-form">
+                                Table Inline Adding form Using Reactive Form</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 col-xxl-4 mb-5">
+                <div class="card bg-light border-0 h-100">
+                    <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i
+                                class="bi bi-cloud-download"></i></div>
+                        <h2 class="fs-4 fw-bold">Resuable Form</h2>
+
+                        <div class="list-group">
+                            <a class="list-group-item list-group-item-action" routerLink="/stepper-form">Stepper Form</a>
+                            <a class="list-group-item list-group-item-action" routerLink="/reusable-form-json">Resuable form with json</a>
+                            <a class="list-group-item list-group-item-action" routerLink="/form-content-projection">Resuable form with content projection</a>
+                            <a class="list-group-item list-group-item-action" routerLink="/form-with-config">Resuable form with config</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-xxl-4 mb-5">
+                <div class="card bg-light border-0 h-100">
+                    <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i
+                                class="bi bi-patch-check"></i></div>
+                        <h2 class="fs-4 fw-bold">Custom Directive</h2>
+                        <p class="mb-0">Start Bootstrap has been the leader in free Bootstrap templates since 2013!</p>
+                        <a class="btn btn-primary btn-lg mt-4" routerLink="/custom-directive">click</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-xxl-4 mb-5">
+                <div class="card bg-light border-0 h-100">
+                    <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i
+                                class="bi bi-collection"></i></div>
+                        <h2 class="fs-4 fw-bold">LifeCycle Hooks</h2>
+                        <p class="mb-0">Life Cycle Hooks | Exploring Component Lifecycles with Practical Examples </p>
+                        <a class="btn btn-primary btn-lg mt-4" routerLink="">click</a>
+                    </div>
+                </div>
+            </div>
+          
+            
+            <div class="col-lg-6 col-xxl-4 mb-5">
+                <div class="card bg-light border-0 h-100">
+                    <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i
+                                class="bi bi-code"></i></div>
+                        <h2 class="fs-4 fw-bold">Reusable show more</h2>
+                        <!-- <p class="mb-0">show more less reusable component angular.We keep our dependencies up to date and squash bugs as they come!</p> -->
+                        <p class="mb-0"><app-show-more [text]="data" [wordLimit]="8"></app-show-more></p>
+                        
+                        <a class="btn btn-primary btn-lg mt-4" routerLink="/users-list">click</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-xxl-4 mb-5">
+                <div class="card bg-light border-0 h-100">
+                    <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i
+                                class="bi bi-card-heading"></i></div>
+                        <h2 class="fs-4 fw-bold">Resuable Form-3</h2>
+                        <p class="mb-0">Resuable form with content projection(@input method) and simple form validation.
+                        </p>
+                        <a class="btn btn-primary btn-lg mt-4" routerLink="">click</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer-->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2024</p>
+    </div>
+</footer>
+
+<!-- Core theme JS-->
+<!-- <script src="js/scripts.js"></script> -->
